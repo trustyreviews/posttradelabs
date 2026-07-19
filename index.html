@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Post Trade Labs</title>
+    <meta
+      name="description"
+      content="Rewind your trades. Catch what broke before it becomes a habit."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Manrope:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0a0c0b;
+        --ink: #f2f4f0;
+        --muted: rgba(242, 244, 240, 0.68);
+        --faint: rgba(242, 244, 240, 0.42);
+        --accent: #c8f542;
+        --accent-ink: #12150f;
+        --line: rgba(242, 244, 240, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Manrope, sans-serif;
+      }
+
+      body {
+        min-height: 100vh;
+        background:
+          radial-gradient(ellipse 90% 60% at 15% 10%, rgba(200, 245, 66, 0.12), transparent 55%),
+          radial-gradient(ellipse 70% 50% at 90% 80%, rgba(70, 120, 90, 0.18), transparent 50%),
+          linear-gradient(165deg, #0a0c0b 0%, #121612 45%, #0a0c0b 100%);
+      }
+
+      .shell {
+        min-height: 100vh;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        padding: clamp(1.25rem, 4vw, 2.5rem);
+        gap: 2rem;
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .mark {
+        font-family: Fraunces, Georgia, serif;
+        font-weight: 700;
+        font-size: 1.15rem;
+        letter-spacing: -0.03em;
+      }
+
+      .nav-meta {
+        color: var(--faint);
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 42rem;
+        padding: clamp(2rem, 8vh, 5rem) 0;
+        animation: rise 0.9s ease-out both;
+      }
+
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(18px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      h1 {
+        margin: 0;
+        font-family: Fraunces, Georgia, serif;
+        font-weight: 700;
+        font-size: clamp(3rem, 10vw, 5.6rem);
+        line-height: 0.95;
+        letter-spacing: -0.045em;
+      }
+
+      .lede {
+        margin: 1.25rem 0 0;
+        max-width: 28rem;
+        color: var(--muted);
+        font-size: clamp(1.05rem, 2.4vw, 1.25rem);
+        line-height: 1.55;
+        animation: rise 1s 0.12s ease-out both;
+      }
+
+      .actions {
+        margin-top: 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        animation: rise 1s 0.22s ease-out both;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.9rem 1.35rem;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: transform 0.15s ease, background 0.15s ease;
+      }
+
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: var(--accent-ink);
+      }
+
+      .btn-ghost {
+        border: 1px solid var(--line);
+        color: var(--ink);
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      footer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem 1.5rem;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid var(--line);
+        padding-top: 1.25rem;
+        color: var(--faint);
+        font-size: 0.85rem;
+      }
+
+      footer a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: var(--ink);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shell">
+      <nav>
+        <div class="mark">Post Trade Labs</div>
+        <div class="nav-meta">Trade review</div>
+      </nav>
+
+      <main>
+        <h1>Post Trade Labs</h1>
+        <p class="lede">
+          Watch the trade back. Catch what broke before it becomes a habit —
+          journal, 1‑minute replay, and an AI coach on the tape.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:hello@posttradelabs.com">Get early access</a>
+          <a class="btn btn-ghost" href="https://rewind-coach-api.rewindapp.workers.dev/health">API status</a>
+        </div>
+      </main>
+
+      <footer>
+        <span>© <span id="y"></span> Post Trade Labs</span>
+        <a href="https://rewind-coach-api.rewindapp.workers.dev/health">api status</a>
+      </footer>
+    </div>
+    <script>
+      document.getElementById('y').textContent = String(new Date().getFullYear());
+    </script>
+  </body>
+</html>
