@@ -3,148 +3,149 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Post Trade Labs — Watch the trade back</title>
+    <title>Post Trade Labs — Watch the tape edge</title>
     <meta
       name="description"
-      content="Journal the trade, replay the tape bar by bar, and freeze when the AI coach catches what broke — before it becomes a habit."
+      content="Catch what broke before it becomes a habit. Journal, 1-minute replay, and AI tape coaching."
     />
     <meta property="og:title" content="Post Trade Labs" />
     <meta
       property="og:description"
-      content="Watch the trade back. Catch what broke before it becomes a habit."
+      content="Watch the tape edge. Catch what broke before it becomes a habit."
     />
     <meta property="og:url" content="https://www.posttradelabs.com/" />
     <link rel="canonical" href="https://www.posttradelabs.com/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="site.css" />
   </head>
   <body>
-    <header class="top">
-      <a class="mark" href="/">Post Trade Labs</a>
-      <a class="top-cta" href="/app/">Open app</a>
+    <div class="grid-bg" aria-hidden="true"></div>
+
+    <header class="nav">
+      <a class="logo" href="/">
+        <span class="logo-sq" aria-hidden="true"></span>
+        Post Trade Labs
+      </a>
+      <div class="nav-right">
+        <span class="status">
+          <span class="status-dot" aria-hidden="true"></span>
+          Trade server active
+        </span>
+        <a class="nav-link" href="/app/">Open app</a>
+      </div>
     </header>
 
-    <section class="hero" aria-label="Product demo">
-      <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
-      <div class="hero-vignette" aria-hidden="true"></div>
+    <section class="hero">
       <div class="hero-copy">
-        <p class="brand">Post Trade Labs</p>
-        <h1>Watch the trade back.</h1>
+        <p class="target">[ Target: precision execution ]</p>
+        <h1>Watch the <span class="lime">tape edge.</span></h1>
         <p class="lede">
-          Catch what broke before it becomes a habit — journal, 1‑minute replay,
-          and an AI coach on the tape.
+          Catch what broke before it becomes a habit. Journal, initiate 1-minute
+          replay segments, and ingest AI tape coaching directly into your workflow.
         </p>
         <div class="actions">
-          <a class="btn btn-primary" href="/app/">Get early access</a>
-          <a class="btn btn-ghost" href="#journal">See how it works</a>
+          <a class="btn btn-lime" href="/app/">Get early access →</a>
+          <a class="btn btn-ghost" href="https://rewind-coach-api.rewindapp.workers.dev/health">
+            <span class="wave" aria-hidden="true"></span>
+            API status
+          </a>
+        </div>
+      </div>
+      <div class="hero-viz" aria-hidden="true">
+        <div class="node-label">Data node 001-PTL</div>
+        <div class="bars" id="hero-bars">
+          <i style="--h:28%"></i>
+          <i style="--h:42%"></i>
+          <i style="--h:36%"></i>
+          <i style="--h:58%"></i>
+          <i style="--h:48%"></i>
+          <i class="hot" style="--h:86%"></i>
+          <i style="--h:64%"></i>
+          <i style="--h:52%"></i>
+          <i style="--h:40%"></i>
+          <i style="--h:34%"></i>
         </div>
       </div>
     </section>
 
-    <section class="feature" id="journal" data-scene="journal">
-      <div class="feature-copy">
-        <p class="eyebrow">01 — Journal</p>
-        <h2>Log the trade once. Keep the tape forever.</h2>
-        <p class="feature-lede">
-          Entry, exit, stop, size — structured so the replay knows exactly where
-          you were in the market.
-        </p>
-      </div>
-      <div class="stage" data-stage="journal">
-        <div class="journal-card">
-          <div class="journal-head">
-            <span class="ticker">NVDA</span>
-            <span class="side long">Long</span>
-            <span class="pnl" data-pnl>+$0</span>
-          </div>
-          <div class="journal-meta">
-            <span data-entry-time>09:42 → —</span>
-            <span>2 contracts</span>
-          </div>
-          <div class="journal-bars" aria-hidden="true">
-            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    <section class="band" id="detect">
+      <div class="band-viz">
+        <div class="tape-panel">
+          <canvas id="tape-canvas" width="640" height="280" aria-hidden="true"></canvas>
+          <div class="detect-callout" id="detect-callout">
+            <span class="detect-kicker">Detection</span>
+            <strong>Revenge trading</strong>
+            <span class="detect-drop">−2.3 R drop</span>
           </div>
         </div>
       </div>
+      <div class="band-copy">
+        <h2>Auto-detect <span class="fatal">fatal flaws.</span></h2>
+        <p>
+          The engine flags logic breaks on the tape — revenge sizing, stop chasing,
+          and exits that never matched the plan.
+        </p>
+        <ul class="checks">
+          <li><span class="ok">✓</span> Sub-millisecond tape reconstruction</li>
+          <li><span class="ok">✓</span> Algorithmic pattern recognition</li>
+          <li><span class="bad">✕</span> Eliminate emotional slippage</li>
+        </ul>
+      </div>
     </section>
 
-    <section class="feature feature-flip" id="replay" data-scene="replay">
-      <div class="feature-copy">
-        <p class="eyebrow">02 — Replay</p>
-        <h2>Scrub the tape like you were still in it.</h2>
-        <p class="feature-lede">
-          One-minute bars advance under your fingers. Mint marks entry. Red
-          locks the exit. The story of the fill is on the rail.
-        </p>
+    <section class="engine" id="engine">
+      <div class="engine-head">
+        <p class="eyebrow">Post-mortem engine</p>
+        <h2>See the habit in the numbers.</h2>
       </div>
-      <div class="stage stage-chart" data-stage="replay">
-        <canvas id="replay-canvas" aria-hidden="true"></canvas>
-        <div class="transport">
-          <span class="transport-label">1m</span>
-          <div class="scrub">
-            <div class="scrub-fill" data-scrub></div>
-            <div class="scrub-thumb" data-thumb></div>
+      <div class="metrics">
+        <article class="card card-wide">
+          <p class="card-label">Premature exits</p>
+          <div class="prem-bar">
+            <span class="prem-fill" id="prem-fill"></span>
+            <span class="prem-tick" id="prem-tick"></span>
           </div>
-          <span class="transport-time" data-clock>09:42</span>
-        </div>
-      </div>
-    </section>
-
-    <section class="feature" id="coach" data-scene="coach">
-      <div class="feature-copy">
-        <p class="eyebrow">03 — Coach</p>
-        <h2>Freeze the moment the process slipped.</h2>
-        <p class="feature-lede">
-          Playback stops. The coach names the habit — not the next candle —
-          while the chart is still open under your thumb.
-        </p>
-      </div>
-      <div class="stage stage-chart" data-stage="coach">
-        <canvas id="coach-canvas" aria-hidden="true"></canvas>
-        <div class="coach-sheet" data-coach-sheet>
-          <div class="coach-badge">Coach insight</div>
-          <p class="coach-line" data-coach-line></p>
-        </div>
-      </div>
-    </section>
-
-    <section class="feature feature-flip" id="debrief" data-scene="debrief">
-      <div class="feature-copy">
-        <p class="eyebrow">04 — Debrief</p>
-        <h2>Leave with the lesson, not just the P&amp;L.</h2>
-        <p class="feature-lede">
-          A clean summary of what paid, what cost you, and the two rules to
-          carry into the next session.
-        </p>
-      </div>
-      <div class="stage" data-stage="debrief">
-        <div class="debrief-card">
-          <div class="debrief-top">
-            <span class="ticker">NVDA</span>
-            <span class="debrief-pnl" data-debrief-pnl>+$0</span>
-          </div>
-          <ul class="takeaways">
-            <li data-take="0">Entry waited for the level — keep that.</li>
-            <li data-take="1">Exit chased the wick — size earlier next time.</li>
+          <p class="card-note">Process breaks clustered after +1.5R runners</p>
+        </article>
+        <article class="card">
+          <p class="card-label">Win rate</p>
+          <p class="metric-big lime" id="win-rate">47.2%</p>
+          <p class="metric-delta up">+1.4% vs prev</p>
+        </article>
+        <article class="card">
+          <p class="card-label">Max drawdown</p>
+          <p class="metric-big red" id="max-dd">−8.1%</p>
+          <p class="metric-delta">Drawdown limit</p>
+        </article>
+        <article class="card card-full">
+          <p class="card-label">Logged trades</p>
+          <ul class="trades">
+            <li>
+              <span>NQ Long @ 18450</span>
+              <span class="tag tag-bad">STOP_CHASED</span>
+            </li>
+            <li>
+              <span>ES Short @ 5213</span>
+              <span class="tag tag-good">PERFECT_EXECUTION</span>
+            </li>
           </ul>
-        </div>
+        </article>
       </div>
     </section>
 
     <section class="close">
-      <h2>Ready to watch one back?</h2>
-      <p>Early access is open. Bring a trade. Leave with a habit you can name.</p>
-      <a class="btn btn-primary" href="/app/">Get early access</a>
+      <h2>Stop guessing. Start reviewing.</h2>
+      <a class="btn btn-white" href="/app/">Initialize workspace →</a>
     </section>
 
     <footer class="foot">
-      <span>© <span id="y"></span> Post Trade Labs</span>
-      <a href="/app/">Open app</a>
+      <span>> Data Post Trade Labs / all systems nominal · © <span id="y"></span></span>
+      <a href="/app/">Open app ↗</a>
     </footer>
 
     <script src="demo.js" defer></script>
