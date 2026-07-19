@@ -6,7 +6,7 @@
     <title>Post Trade Labs — Watch the tape edge</title>
     <meta
       name="description"
-      content="Catch what broke before it becomes a habit. Journal, 1-minute replay, and AI tape coaching."
+      content="1-minute bar replay with a coach that freezes the moment your process slipped — on the chart."
     />
     <meta property="og:title" content="Post Trade Labs" />
     <meta
@@ -43,20 +43,132 @@
     <section class="hero" aria-label="Product demo">
       <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
       <div class="hero-vignette" aria-hidden="true"></div>
-      <div class="hero-copy">
-        <p class="target">[ Not another psychology journal ]</p>
-        <h1>Watch the <span class="lime">tape edge.</span></h1>
-        <p class="lede">
-          1‑minute bar replay with a coach that freezes the moment your process
-          slipped — on the chart, not in a spreadsheet.
-        </p>
-        <div class="actions">
-          <a class="btn btn-lime" href="/app/">Get early access →</a>
-          <a class="btn btn-ghost" href="https://rewind-coach-api.rewindapp.workers.dev/health">
-            <span class="wave" aria-hidden="true"></span>
-            API status
-          </a>
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="target">[ 1‑minute bar replay ]</p>
+          <h1>Watch the <span class="mint">tape edge.</span></h1>
+          <p class="lede">
+            Scrub the trade back on the chart. The coach freezes the exact bar
+            where your process slipped.
+          </p>
+          <div class="actions">
+            <a class="btn btn-mint" href="/app/">Get early access →</a>
+            <a class="btn btn-ghost" href="#phones">See the app</a>
+          </div>
         </div>
+
+        <div class="hero-phone-wrap" aria-hidden="true">
+          <div class="phone phone-hero phone-tilt-a">
+            <div class="phone-bezel">
+              <div class="phone-island"></div>
+              <div class="phone-screen screen-replay">
+                <div class="ui-top">
+                  <span>NVDA</span>
+                  <span class="ui-pill">1m · LIVE</span>
+                </div>
+                <div class="ui-chart">
+                  <i style="--h:32%"></i><i style="--h:44%"></i><i style="--h:38%"></i>
+                  <i class="up" style="--h:55%"></i><i class="up" style="--h:68%"></i>
+                  <i class="up" style="--h:62%"></i><i class="dn" style="--h:48%"></i>
+                  <i class="up" style="--h:72%"></i><i class="dn" style="--h:58%"></i>
+                  <i class="up" style="--h:80%"></i>
+                </div>
+                <div class="ui-levels">
+                  <span class="lvl entry">Entry</span>
+                  <span class="lvl stop">Stop</span>
+                </div>
+                <div class="ui-scrub">
+                  <div class="ui-scrub-fill"></div>
+                  <div class="ui-scrub-thumb"></div>
+                </div>
+                <div class="ui-transport">
+                  <span>◀◀</span><span class="play">▶</span><span>▶▶</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="phones" id="phones">
+      <div class="phones-head">
+        <p class="eyebrow">On your phone</p>
+        <h2>The tape. The freeze. The lesson.</h2>
+        <p class="phones-lede">
+          Built for reviewing trades the way you actually trade them — bar by bar.
+        </p>
+      </div>
+      <div class="phone-row">
+        <figure class="phone-card">
+          <div class="phone phone-sm">
+            <div class="phone-bezel">
+              <div class="phone-island"></div>
+              <div class="phone-screen screen-home">
+                <p class="ui-eyebrow">1‑minute bar replay</p>
+                <h3>Post Trade<br />Labs</h3>
+                <p class="ui-tag">Watch the trade back on the tape.</p>
+                <div class="ui-cta">Log a trade</div>
+                <div class="ui-resume">
+                  <span class="dot"></span>
+                  Resume tape · NVDA
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption>Home — start a review</figcaption>
+        </figure>
+
+        <figure class="phone-card phone-card-mid">
+          <div class="phone phone-md">
+            <div class="phone-bezel">
+              <div class="phone-island"></div>
+              <div class="phone-screen screen-replay">
+                <div class="ui-top">
+                  <span>ES</span>
+                  <span class="ui-pill mint">REPLAY</span>
+                </div>
+                <div class="ui-chart tall">
+                  <i style="--h:28%"></i><i style="--h:40%"></i><i class="up" style="--h:52%"></i>
+                  <i class="up" style="--h:60%"></i><i class="dn" style="--h:46%"></i>
+                  <i class="up" style="--h:70%"></i><i class="up" style="--h:78%"></i>
+                  <i class="dn" style="--h:55%"></i><i class="up" style="--h:66%"></i>
+                  <i class="dn" style="--h:42%"></i><i class="up" style="--h:58%"></i>
+                  <i class="up" style="--h:74%"></i>
+                </div>
+                <div class="ui-line entry-line"></div>
+                <div class="ui-line exit-line"></div>
+                <div class="ui-scrub">
+                  <div class="ui-scrub-fill wide"></div>
+                  <div class="ui-scrub-thumb"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption>Replay — scrub the 1m tape</figcaption>
+        </figure>
+
+        <figure class="phone-card">
+          <div class="phone phone-sm">
+            <div class="phone-bezel">
+              <div class="phone-island"></div>
+              <div class="phone-screen screen-coach">
+                <div class="ui-chart dim">
+                  <i style="--h:40%"></i><i style="--h:55%"></i><i class="dn" style="--h:48%"></i>
+                  <i class="dn" style="--h:36%"></i><i class="up" style="--h:50%"></i>
+                </div>
+                <div class="coach-card">
+                  <p class="coach-kicker">Coach insight</p>
+                  <p class="coach-body">
+                    You moved the stop after the first red bar. That’s revenge sizing — not the plan.
+                  </p>
+                  <div class="coach-btn">Continue ▶</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <figcaption>Coach — freeze the moment</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -65,9 +177,9 @@
         <div class="tape-panel">
           <canvas id="tape-canvas" width="640" height="280" aria-hidden="true"></canvas>
           <div class="detect-callout" id="detect-callout">
-            <span class="detect-kicker">Detection</span>
-            <strong>Revenge trading</strong>
-            <span class="detect-drop">−2.3 R drop</span>
+            <span class="detect-kicker">On the tape</span>
+            <strong>Process break</strong>
+            <span class="detect-drop">Stop moved · bar 52</span>
           </div>
         </div>
       </div>
@@ -101,7 +213,7 @@
         </article>
         <article class="card">
           <p class="card-label">Win rate</p>
-          <p class="metric-big lime" id="win-rate">47.2%</p>
+          <p class="metric-big mint" id="win-rate">47.2%</p>
           <p class="metric-delta up">+1.4% vs prev</p>
         </article>
         <article class="card">
@@ -127,11 +239,11 @@
 
     <section class="close">
       <h2>Stop guessing. Start reviewing.</h2>
-      <a class="btn btn-white" href="/app/">Initialize workspace →</a>
+      <a class="btn btn-mint" href="/app/">Open the app →</a>
     </section>
 
     <footer class="foot">
-      <span>> Data Post Trade Labs / all systems nominal · © <span id="y"></span></span>
+      <span>> Post Trade Labs · © <span id="y"></span></span>
       <a href="/app/">Open app ↗</a>
     </footer>
 

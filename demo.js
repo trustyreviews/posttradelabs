@@ -8,12 +8,12 @@
     grid: 'rgba(255,255,255,0.045)',
     bull: '#22C55E',
     bear: '#F87171',
-    mint: '#4ADEB8',
+    mint: '#2DD4A0',
     stop: '#FF5C7A',
     exit: '#EF5350',
-    accent: '#C8F542',
-    accentSoft: 'rgba(200,245,66,0.45)',
-    faint: 'rgba(245,245,247,0.28)',
+    accent: '#1FA87A',
+    accentSoft: 'rgba(31,168,122,0.45)',
+    faint: 'rgba(238,245,242,0.28)',
   };
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -187,9 +187,9 @@
 
       ctx.clearRect(0, 0, w, h);
       const g = ctx.createLinearGradient(0, 0, w, h);
-      g.addColorStop(0, 'rgba(200,245,66,0.035)');
+      g.addColorStop(0, 'rgba(31,168,122,0.05)');
       g.addColorStop(0.55, 'rgba(0,0,0,0)');
-      g.addColorStop(1, 'rgba(34,197,94,0.03)');
+      g.addColorStop(1, 'rgba(45,212,160,0.04)');
       ctx.fillStyle = g;
       ctx.fillRect(0, 0, w, h);
 
@@ -230,12 +230,12 @@
       if (state.coachPulse > 0.01) {
         const p = state.coachPulse;
         ctx.save();
-        ctx.strokeStyle = `rgba(200,245,66,${0.45 * p})`;
+        ctx.strokeStyle = `rgba(45,212,160,${0.45 * p})`;
         ctx.lineWidth = 2 + 6 * (1 - p);
         ctx.strokeRect(8, 8, w - 16, h - 16);
         const rg = ctx.createRadialGradient(w * 0.5, h * 0.55, 10, w * 0.5, h * 0.55, w * 0.45);
-        rg.addColorStop(0, `rgba(200,245,66,${0.1 * p})`);
-        rg.addColorStop(1, 'rgba(200,245,66,0)');
+        rg.addColorStop(0, `rgba(31,168,122,${0.12 * p})`);
+        rg.addColorStop(1, 'rgba(31,168,122,0)');
         ctx.fillStyle = rg;
         ctx.fillRect(0, 0, w, h);
         ctx.restore();
@@ -378,7 +378,7 @@
       ctx.clearRect(0, 0, w, h);
       ctx.fillStyle = '#0c0c0c';
       ctx.fillRect(0, 0, w, h);
-      ctx.strokeStyle = 'rgba(200,245,66,0.05)';
+      ctx.strokeStyle = 'rgba(31,168,122,0.06)';
       for (let i = 1; i < 5; i++) {
         const y = (h * i) / 5;
         ctx.beginPath();
@@ -388,7 +388,7 @@
       }
       const end = Math.max(2, Math.floor(points.length * progress));
       ctx.beginPath();
-      ctx.strokeStyle = 'rgba(244,244,240,0.85)';
+      ctx.strokeStyle = 'rgba(238,245,242,0.85)';
       ctx.lineWidth = 1.75;
       for (let i = 0; i < end; i++) {
         if (i === 0) ctx.moveTo(points[i].x, points[i].y);
@@ -399,7 +399,7 @@
       if (progress > 0.55 && points[markI]) {
         const p = points[markI];
         ctx.beginPath();
-        ctx.fillStyle = '#c8f542';
+        ctx.fillStyle = '#2DD4A0';
         ctx.arc(p.x, p.y, 4.5, 0, Math.PI * 2);
         ctx.fill();
       }
