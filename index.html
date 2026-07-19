@@ -22,7 +22,7 @@
       rel="stylesheet"
     />
     <meta http-equiv="Cache-Control" content="no-cache" />
-    <link rel="stylesheet" href="site.css?v=mint-phones-2" />
+    <link rel="stylesheet" href="site.css?v=scroll-pop-3" />
   </head>
   <body>
     <div class="grid-bg" aria-hidden="true"></div>
@@ -93,7 +93,7 @@
     </section>
 
     <section class="phones" id="phones">
-      <div class="phones-head">
+      <div class="phones-head reveal" data-reveal>
         <p class="eyebrow">On your phone</p>
         <h2>The tape. The freeze. The lesson.</h2>
         <p class="phones-lede">
@@ -101,7 +101,7 @@
         </p>
       </div>
       <div class="phone-row">
-        <figure class="phone-card">
+        <figure class="phone-card reveal reveal-phone" data-reveal data-delay="0">
           <div class="phone phone-sm">
             <div class="phone-bezel">
               <div class="phone-island"></div>
@@ -120,7 +120,7 @@
           <figcaption>Home — start a review</figcaption>
         </figure>
 
-        <figure class="phone-card phone-card-mid">
+        <figure class="phone-card phone-card-mid reveal reveal-phone" data-reveal data-delay="120">
           <div class="phone phone-md">
             <div class="phone-bezel">
               <div class="phone-island"></div>
@@ -149,7 +149,7 @@
           <figcaption>Replay — scrub the 1m tape</figcaption>
         </figure>
 
-        <figure class="phone-card">
+        <figure class="phone-card reveal reveal-phone" data-reveal data-delay="240">
           <div class="phone phone-sm">
             <div class="phone-bezel">
               <div class="phone-island"></div>
@@ -174,7 +174,7 @@
     </section>
 
     <section class="band" id="detect">
-      <div class="band-viz">
+      <div class="band-viz reveal reveal-left" data-reveal>
         <div class="tape-panel">
           <canvas id="tape-canvas" width="640" height="280" aria-hidden="true"></canvas>
           <div class="detect-callout" id="detect-callout">
@@ -184,7 +184,7 @@
           </div>
         </div>
       </div>
-      <div class="band-copy">
+      <div class="band-copy reveal reveal-right" data-reveal data-delay="100">
         <h2>Freeze the <span class="fatal">exact bar.</span></h2>
         <p>
           Playback stops on the candle where the habit showed up. Coach names the
@@ -199,12 +199,12 @@
     </section>
 
     <section class="engine" id="engine">
-      <div class="engine-head">
+      <div class="engine-head reveal" data-reveal>
         <p class="eyebrow">After the tape</p>
         <h2>Leave with the lesson — not just the P&amp;L.</h2>
       </div>
       <div class="metrics">
-        <article class="card card-wide">
+        <article class="card card-wide reveal" data-reveal data-delay="0">
           <p class="card-label">Premature exits</p>
           <div class="prem-bar">
             <span class="prem-fill" id="prem-fill"></span>
@@ -212,17 +212,17 @@
           </div>
           <p class="card-note">Process breaks clustered after +1.5R runners</p>
         </article>
-        <article class="card">
+        <article class="card reveal" data-reveal data-delay="80">
           <p class="card-label">Win rate</p>
           <p class="metric-big mint" id="win-rate">47.2%</p>
           <p class="metric-delta up">+1.4% vs prev</p>
         </article>
-        <article class="card">
+        <article class="card reveal" data-reveal data-delay="160">
           <p class="card-label">Max drawdown</p>
           <p class="metric-big red" id="max-dd">−8.1%</p>
           <p class="metric-delta">Drawdown limit</p>
         </article>
-        <article class="card card-full">
+        <article class="card card-full reveal" data-reveal data-delay="220">
           <p class="card-label">Logged trades</p>
           <ul class="trades">
             <li>
@@ -238,7 +238,7 @@
       </div>
     </section>
 
-    <section class="close">
+    <section class="close reveal" data-reveal>
       <h2>Stop guessing. Start reviewing.</h2>
       <a class="btn btn-mint" href="/app/">Open the app →</a>
     </section>
@@ -248,7 +248,7 @@
       <a href="/app/">Open app ↗</a>
     </footer>
 
-    <script src="demo.js?v=mint-phones-2" defer></script>
+    <script src="demo.js?v=scroll-pop-3" defer></script>
     <script>
       document.getElementById('y').textContent = String(new Date().getFullYear());
     </script>

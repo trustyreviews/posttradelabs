@@ -503,6 +503,27 @@
     if (detect) featureIO.observe(detect);
     if (engine) featureIO.observe(engine);
 
+    // Scroll pop-ins (phones + sections)
+    const reveals = document.querySelectorAll('[data-reveal]');
+    if (reduceMotion) {
+      reveals.forEach((el) => el.classList.add('is-in'));
+    } else {
+      const revealIO = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) {
+            if (!e.isIntersecting) continue;
+            const delay = Number(e.target.getAttribute('data-delay') || 0);
+            window.setTimeout(() => {
+              e.target.classList.add('is-in');
+            }, delay);
+            revealIO.unobserve(e.target);
+          }
+        },
+        { threshold: 0.18, rootMargin: '0px 0px -8% 0px' },
+      );
+      reveals.forEach((el) => revealIO.observe(el));
+    }
+
     if (document.fonts?.ready) document.fonts.ready.then(resizeAll);
   }
 
