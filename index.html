@@ -22,7 +22,7 @@
       rel="stylesheet"
     />
     <meta http-equiv="Cache-Control" content="no-cache" />
-    <link rel="stylesheet" href="site.css?v=mobile-phones-12" />
+    <link rel="stylesheet" href="site.css?v=veee-demo-13" />
   </head>
   <body>
     <div class="grid-bg" aria-hidden="true"></div>
@@ -37,7 +37,7 @@
           <span class="status-dot" aria-hidden="true"></span>
           Trade server active
         </span>
-        <a class="nav-link" href="/app/">Open app</a>
+        <a class="nav-link" href="/app/?demo=veee">Try demo</a>
       </div>
     </header>
 
@@ -52,8 +52,13 @@
             Scrub the trade back on the chart. The coach freezes the exact bar
             where your process slipped.
           </p>
+          <p class="demo-chip" aria-label="Sample demo trade">
+            <span class="demo-chip-tag">Demo</span>
+            <span class="demo-chip-sym">VEEE</span>
+            <span class="demo-chip-meta">Long · 2sh · +$4.83</span>
+          </p>
           <div class="actions">
-            <a class="btn btn-mint" href="/app/">Get early access →</a>
+            <a class="btn btn-mint" href="/app/?demo=veee">Try VEEE demo →</a>
             <a class="btn btn-ghost" href="#phones">See the app</a>
           </div>
         </div>
@@ -175,12 +180,12 @@
           <p class="card-label">Logged trades</p>
           <ul class="trades">
             <li>
-              <span>NQ Long @ 18450</span>
-              <span class="tag tag-bad">STOP_CHASED</span>
+              <span>VEEE Long @ 44.26</span>
+              <span class="tag tag-good">DEMO</span>
             </li>
             <li>
-              <span>ES Short @ 5213</span>
-              <span class="tag tag-good">PERFECT_EXECUTION</span>
+              <span>TSLA Short @ 248.10</span>
+              <span class="tag tag-bad">SOLD_TOO_SOON</span>
             </li>
           </ul>
         </article>
@@ -189,15 +194,15 @@
 
     <section class="close reveal" data-reveal>
       <h2>Stop guessing. Start reviewing.</h2>
-      <a class="btn btn-mint" href="/app/">Open the app →</a>
+      <a class="btn btn-mint" href="/app/?demo=veee">Try the VEEE demo →</a>
     </section>
 
     <footer class="foot">
-      <span>> Post Trade Labs · © <span id="y"></span> · build 12</span>
-      <a href="/app/">Open app ↗</a>
+      <span>> Post Trade Labs · © <span id="y"></span> · build 13</span>
+      <a href="/app/?demo=veee">Try demo ↗</a>
     </footer>
 
-    <script src="demo.js?v=mobile-phones-12" defer></script>
+    <script src="demo.js?v=veee-demo-13" defer></script>
     <script>
       document.getElementById('y').textContent = String(new Date().getFullYear());
     </script>

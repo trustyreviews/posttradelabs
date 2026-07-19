@@ -43,22 +43,36 @@
     };
   }
 
+  /** Demo trade — VEEE long (matches app sample / replay screenshots). */
+  const DEMO = {
+    ticker: 'VEEE',
+    entry: 44.26,
+    exit: 46.67,
+    shares: 2,
+    pnlCash: 4.83,
+  };
+  const DEMO_ENTRY_I = 14;
+  const DEMO_EXIT_I = 42;
+
   function buildSeries(count, seed) {
     const rand = mulberry32(seed);
     const candles = [];
-    let price = 118.4;
+    let price = 42.85;
     for (let i = 0; i < count; i++) {
       let drift = 0;
-      if (i < 10) drift = (rand() - 0.55) * 0.35;
-      else if (i < 18) drift = (rand() - 0.35) * 0.55;
-      else if (i < 36) drift = 0.12 + (rand() - 0.3) * 0.7;
-      else if (i < 44) drift = (rand() - 0.45) * 0.5;
-      else drift = -0.05 + (rand() - 0.55) * 0.45;
+      if (i < 10) drift = (rand() - 0.55) * 0.18;
+      else if (i < DEMO_ENTRY_I) drift = (rand() - 0.4) * 0.28;
+      else if (i < DEMO_EXIT_I) drift = 0.06 + (rand() - 0.32) * 0.22;
+      else if (i < DEMO_EXIT_I + 6) drift = (rand() - 0.48) * 0.2;
+      else drift = -0.02 + (rand() - 0.55) * 0.16;
 
       const open = price;
-      const close = open + drift;
-      const high = Math.max(open, close) + rand() * 0.45;
-      const low = Math.min(open, close) - rand() * 0.4;
+      let close = open + drift;
+      // Pin fills so entry/exit markers match the logged demo trade.
+      if (i === DEMO_ENTRY_I) close = DEMO.entry;
+      if (i === DEMO_EXIT_I) close = DEMO.exit;
+      const high = Math.max(open, close) + rand() * 0.22;
+      const low = Math.min(open, close) - rand() * 0.2;
       candles.push({ open, high, low, close });
       price = close;
     }
@@ -66,12 +80,12 @@
   }
 
   const SERIES = buildSeries(56, 0x50c4a11);
-  const ENTRY_I = 14;
-  const STOP_PRICE = SERIES[ENTRY_I].low - 0.55;
-  const EXIT_I = 42;
-  const ENTRY_PRICE = SERIES[ENTRY_I].close;
-  const EXIT_PRICE = SERIES[EXIT_I].close;
-  const PNL = Math.round((EXIT_PRICE - ENTRY_PRICE) * 200);
+  const ENTRY_I = DEMO_ENTRY_I;
+  const EXIT_I = DEMO_EXIT_I;
+  const ENTRY_PRICE = DEMO.entry;
+  const EXIT_PRICE = DEMO.exit;
+  const STOP_PRICE = ENTRY_PRICE - 0.85;
+  const PNL = DEMO.pnlCash;
 
   function createChart(canvas, opts = {}) {
     const state = {
@@ -243,7 +257,7 @@
 
       if (state.pnlFlash > 0.01) {
         const p = state.pnlFlash;
-        const label = `+$${PNL}`;
+        const label = `+$${PNL.toFixed(2)}`;
         ctx.save();
         ctx.globalAlpha = p;
         ctx.font = '700 28px Inter, system-ui, sans-serif';
@@ -257,9 +271,12 @@
 
       if (state.watermark) {
         ctx.save();
-        ctx.font = '600 13px Inter, system-ui, sans-serif';
+        ctx.font = '700 13px "IBM Plex Mono", ui-monospace, monospace';
+        ctx.fillStyle = 'rgba(238,245,242,0.72)';
+        ctx.fillText(`${DEMO.ticker} · Long · ${DEMO.shares}sh`, state.pad.l, 18);
+        ctx.font = '500 11px "IBM Plex Mono", ui-monospace, monospace';
         ctx.fillStyle = COLORS.faint;
-        ctx.fillText('NVDA', state.pad.l, 18);
+        ctx.fillText('Demo trade', state.pad.l, 34);
         ctx.restore();
       }
     }
