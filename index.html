@@ -22,7 +22,7 @@
       rel="stylesheet"
     />
     <meta http-equiv="Cache-Control" content="no-cache" />
-    <link rel="stylesheet" href="site.css?v=phone-float-6" />
+    <link rel="stylesheet" href="site.css?v=app-ui-7" />
   </head>
   <body>
     <div class="grid-bg" aria-hidden="true"></div>
@@ -64,35 +64,47 @@
               <div class="phone phone-hero" id="hero-phone">
                 <div class="phone-bezel">
                   <div class="phone-island"></div>
-                  <div class="phone-screen screen-app">
-                    <div class="app-status">
-                      <span>9:41</span>
-                      <span class="app-status-right">●●● 5G</span>
-                    </div>
-                    <div class="app-brand-row">
-                      <span class="app-mark"></span>
-                      <span>Post Trade Labs</span>
-                    </div>
-                    <p class="app-kicker">Chart replay</p>
-                    <h3 class="app-title">Watch the<br /><span>trade back.</span></h3>
-                    <div class="app-chart-card">
-                      <div class="ui-top">
-                        <span>NVDA</span>
-                        <span class="ui-pill mint">REPLAY</span>
+                  <div class="phone-screen screen-trial">
+                    <div class="trial-head">
+                      <div class="trial-brand">
+                        <span class="trial-candles" aria-hidden="true"></span>
+                        <div>
+                          <strong>PostTrade</strong>
+                          <small>Quick setup · 2 min</small>
+                        </div>
                       </div>
-                      <div class="ui-chart compact">
-                        <i style="--h:32%"></i><i style="--h:44%"></i><i class="up" style="--h:55%"></i>
-                        <i class="up" style="--h:68%"></i><i class="dn" style="--h:48%"></i>
-                        <i class="up" style="--h:72%"></i><i class="up" style="--h:80%"></i>
-                        <i class="dn" style="--h:58%"></i>
-                      </div>
-                      <div class="ui-scrub">
-                        <div class="ui-scrub-fill"></div>
-                        <div class="ui-scrub-thumb"></div>
-                      </div>
+                      <span class="trial-x">✕</span>
                     </div>
-                    <div class="app-cta">Resume tape</div>
-                    <div class="app-home-ind"></div>
+                    <div class="trial-steps">
+                      <span class="done">✓</span><i></i>
+                      <span class="done">✓</span><i></i>
+                      <span class="done">✓</span><i></i>
+                      <span class="now"></span>
+                    </div>
+                    <div class="trial-step-labels">
+                      <span>Welcome</span><span>Account</span><span>Goals</span><span>Start</span>
+                    </div>
+                    <h3 class="trial-title">You're almost in.</h3>
+                    <p class="trial-sub">Every feature included for 14 days. Pick what happens after.</p>
+                    <div class="trial-card pro">
+                      <div class="trial-card-top">
+                        <span class="crown">♛</span>
+                        <span class="badge">Most popular</span>
+                      </div>
+                      <strong>PostTrade Pro</strong>
+                      <em>$14.99 <small>/month</small></em>
+                      <ul>
+                        <li>Unlimited trades & history</li>
+                        <li>Full Performance Lab</li>
+                        <li>Psychology & tilt detection</li>
+                      </ul>
+                      <div class="trial-btn mint">Select Pro</div>
+                    </div>
+                    <div class="trial-card">
+                      <strong>Start Free Trial</strong>
+                      <em>$0 <small>for 14 days</small></em>
+                      <div class="trial-btn ghost">Start Trial — No Card</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -104,10 +116,10 @@
 
     <section class="phones" id="phones">
       <div class="phones-head reveal" data-reveal>
-        <p class="eyebrow">On your phone</p>
-        <h2>The tape. The freeze. The lesson.</h2>
+        <p class="eyebrow">Inside the app</p>
+        <h2>Setup that feels finished.</h2>
         <p class="phones-lede">
-          Built for reviewing trades the way you actually trade them — bar by bar.
+          Welcome → account → goals → trial. Same dark mint UI you shipped.
         </p>
       </div>
       <div class="phone-row">
@@ -115,70 +127,86 @@
           <div class="phone phone-sm">
             <div class="phone-bezel">
               <div class="phone-island"></div>
-              <div class="phone-screen screen-home">
-                <p class="ui-eyebrow">Trade replay</p>
-                <h3>Post Trade<br />Labs</h3>
-                <p class="ui-tag">Watch the trade back on the tape.</p>
-                <div class="ui-cta">Log a trade</div>
-                <div class="ui-resume">
-                  <span class="dot"></span>
-                  Resume tape · NVDA
+              <div class="phone-screen screen-trial compact-trial">
+                <div class="trial-brand mini">
+                  <span class="trial-candles"></span>
+                  <strong>PostTrade</strong>
                 </div>
+                <div class="trial-steps mini-steps">
+                  <span class="now"></span><i></i>
+                  <span></span><i></i>
+                  <span></span><i></i>
+                  <span></span>
+                </div>
+                <h3 class="trial-title sm">Welcome in.</h3>
+                <p class="trial-sub">Two minutes to a workspace that reviews with you.</p>
+                <div class="trial-btn mint">Continue</div>
               </div>
             </div>
           </div>
-          <figcaption>Home — start a review</figcaption>
+          <figcaption>Welcome</figcaption>
         </figure>
 
         <figure class="phone-card phone-card-mid reveal reveal-phone" data-reveal data-delay="120">
           <div class="phone phone-md">
             <div class="phone-bezel">
               <div class="phone-island"></div>
-              <div class="phone-screen screen-replay">
-                <div class="ui-top">
-                  <span>ES</span>
-                  <span class="ui-pill mint">REPLAY</span>
+              <div class="phone-screen screen-trial">
+                <div class="trial-head">
+                  <div class="trial-brand">
+                    <span class="trial-candles"></span>
+                    <div>
+                      <strong>PostTrade</strong>
+                      <small>Quick setup · 2 min</small>
+                    </div>
+                  </div>
                 </div>
-                <div class="ui-chart tall">
-                  <i style="--h:28%"></i><i style="--h:40%"></i><i class="up" style="--h:52%"></i>
-                  <i class="up" style="--h:60%"></i><i class="dn" style="--h:46%"></i>
-                  <i class="up" style="--h:70%"></i><i class="up" style="--h:78%"></i>
-                  <i class="dn" style="--h:55%"></i><i class="up" style="--h:66%"></i>
-                  <i class="dn" style="--h:42%"></i><i class="up" style="--h:58%"></i>
-                  <i class="up" style="--h:74%"></i>
+                <div class="trial-steps">
+                  <span class="done">✓</span><i></i>
+                  <span class="done">✓</span><i></i>
+                  <span class="done">✓</span><i></i>
+                  <span class="now"></span>
                 </div>
-                <div class="ui-line entry-line"></div>
-                <div class="ui-line exit-line"></div>
-                <div class="ui-scrub">
-                  <div class="ui-scrub-fill wide"></div>
-                  <div class="ui-scrub-thumb"></div>
+                <h3 class="trial-title sm">You're almost in.</h3>
+                <div class="trial-card pro tight">
+                  <div class="trial-card-top">
+                    <span class="crown">♛</span>
+                    <span class="badge">Most popular</span>
+                  </div>
+                  <strong>PostTrade Pro</strong>
+                  <em>$14.99 <small>/month</small></em>
+                  <div class="trial-btn mint">Select Pro</div>
+                </div>
+                <div class="trial-card tight">
+                  <strong>Start Free Trial</strong>
+                  <em>$0 <small>for 14 days</small></em>
+                  <div class="trial-btn ghost">Start Trial — No Card</div>
                 </div>
               </div>
             </div>
           </div>
-          <figcaption>Replay — scrub the tape</figcaption>
+          <figcaption>Start trial</figcaption>
         </figure>
 
         <figure class="phone-card reveal reveal-phone" data-reveal data-delay="240">
           <div class="phone phone-sm">
             <div class="phone-bezel">
               <div class="phone-island"></div>
-              <div class="phone-screen screen-coach">
-                <div class="ui-chart dim">
-                  <i style="--h:40%"></i><i style="--h:55%"></i><i class="dn" style="--h:48%"></i>
-                  <i class="dn" style="--h:36%"></i><i class="up" style="--h:50%"></i>
+              <div class="phone-screen screen-trial compact-trial">
+                <div class="trial-brand mini">
+                  <span class="trial-candles"></span>
+                  <strong>PostTrade</strong>
                 </div>
-                <div class="coach-card">
-                  <p class="coach-kicker">Coach insight</p>
-                  <p class="coach-body">
-                    You moved the stop after the first red bar. That’s revenge sizing — not the plan.
-                  </p>
-                  <div class="coach-btn">Continue ▶</div>
-                </div>
+                <p class="trial-sub" style="margin-top:1rem">Goals</p>
+                <h3 class="trial-title sm">What are you fixing?</h3>
+                <div class="goal-chip on">Revenge trading</div>
+                <div class="goal-chip">Premature exits</div>
+                <div class="goal-chip">Rule adherence</div>
+                <div class="trial-btn mint" style="margin-top:auto">Continue</div>
               </div>
             </div>
           </div>
-          <figcaption>Coach — freeze the moment</figcaption>
+          <figcaption>Goals</figcaption>
         </figure>
       </div>
     </section>
@@ -258,7 +286,7 @@
       <a href="/app/">Open app ↗</a>
     </footer>
 
-    <script src="demo.js?v=phone-float-6" defer></script>
+    <script src="demo.js?v=app-ui-7" defer></script>
     <script>
       document.getElementById('y').textContent = String(new Date().getFullYear());
     </script>
