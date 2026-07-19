@@ -259,7 +259,7 @@
         ctx.save();
         ctx.font = '600 13px Inter, system-ui, sans-serif';
         ctx.fillStyle = COLORS.faint;
-        ctx.fillText('NVDA · 1m', state.pad.l, 18);
+        ctx.fillText('NVDA', state.pad.l, 18);
         ctx.restore();
       }
     }
