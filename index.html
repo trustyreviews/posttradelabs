@@ -6,7 +6,7 @@
     <title>Post Trade Labs</title>
     <meta
       name="description"
-      content="Rewind your trades. Catch what broke before it becomes a habit."
+      content="Watch the trade back. Catch what broke before it becomes a habit."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,20 +24,14 @@
         --accent-ink: #12150f;
         --line: rgba(242, 244, 240, 0.12);
       }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html,
-      body {
+      * { box-sizing: border-box; }
+      html, body {
         margin: 0;
         min-height: 100%;
         background: var(--bg);
         color: var(--ink);
         font-family: Manrope, sans-serif;
       }
-
       body {
         min-height: 100vh;
         background:
@@ -45,7 +39,6 @@
           radial-gradient(ellipse 70% 50% at 90% 80%, rgba(70, 120, 90, 0.18), transparent 50%),
           linear-gradient(165deg, #0a0c0b 0%, #121612 45%, #0a0c0b 100%);
       }
-
       .shell {
         min-height: 100vh;
         display: grid;
@@ -53,28 +46,24 @@
         padding: clamp(1.25rem, 4vw, 2.5rem);
         gap: 2rem;
       }
-
       nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
         gap: 1rem;
       }
-
       .mark {
         font-family: Fraunces, Georgia, serif;
         font-weight: 700;
         font-size: 1.15rem;
         letter-spacing: -0.03em;
       }
-
       .nav-meta {
         color: var(--faint);
         font-size: 0.8rem;
         letter-spacing: 0.08em;
         text-transform: uppercase;
       }
-
       main {
         display: flex;
         flex-direction: column;
@@ -83,18 +72,10 @@
         padding: clamp(2rem, 8vh, 5rem) 0;
         animation: rise 0.9s ease-out both;
       }
-
       @keyframes rise {
-        from {
-          opacity: 0;
-          transform: translateY(18px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
+        from { opacity: 0; transform: translateY(18px); }
+        to { opacity: 1; transform: translateY(0); }
       }
-
       h1 {
         margin: 0;
         font-family: Fraunces, Georgia, serif;
@@ -103,108 +84,38 @@
         line-height: 0.95;
         letter-spacing: -0.045em;
       }
-
       .lede {
         margin: 1.25rem 0 0;
         max-width: 28rem;
         color: var(--muted);
         font-size: clamp(1.05rem, 2.4vw, 1.25rem);
         line-height: 1.55;
-        animation: rise 1s 0.12s ease-out both;
       }
-
-      .access {
+      .actions {
         margin-top: 2rem;
-        max-width: 26rem;
-        animation: rise 1s 0.22s ease-out both;
-      }
-
-      .access-row {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.6rem;
+        gap: 0.75rem;
       }
-
-      .access input {
-        flex: 1 1 12rem;
-        min-width: 0;
-        padding: 0.9rem 1.1rem;
-        border-radius: 999px;
-        border: 1px solid var(--line);
-        background: rgba(255, 255, 255, 0.04);
-        color: var(--ink);
-        font: inherit;
-        font-size: 0.95rem;
-        outline: none;
-      }
-
-      .access input:focus {
-        border-color: rgba(200, 245, 66, 0.55);
-      }
-
-      .access input::placeholder {
-        color: var(--faint);
-      }
-
       .btn {
         display: inline-flex;
         align-items: center;
         justify-content: center;
         padding: 0.9rem 1.35rem;
         border-radius: 999px;
-        border: none;
-        cursor: pointer;
         text-decoration: none;
-        font: inherit;
         font-weight: 600;
         font-size: 0.95rem;
-        transition: transform 0.15s ease, background 0.15s ease, opacity 0.15s ease;
       }
-
-      .btn:hover {
-        transform: translateY(-1px);
-      }
-
-      .btn:disabled {
-        opacity: 0.7;
-        cursor: default;
-        transform: none;
-      }
-
       .btn-primary {
         background: var(--accent);
         color: var(--accent-ink);
       }
-
       .btn-ghost {
         border: 1px solid var(--line);
         color: var(--ink);
         background: rgba(255, 255, 255, 0.03);
       }
-
-      .access-note {
-        margin: 0.75rem 0 0;
-        color: var(--faint);
-        font-size: 0.85rem;
-        line-height: 1.45;
-        min-height: 1.3em;
-      }
-
-      .access-note.ok {
-        color: var(--accent);
-      }
-
-      .access-note.err {
-        color: #ff8f8f;
-      }
-
-      .actions {
-        margin-top: 1rem;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-      }
-
       footer {
         display: flex;
         flex-wrap: wrap;
@@ -216,15 +127,7 @@
         color: var(--faint);
         font-size: 0.85rem;
       }
-
-      footer a {
-        color: var(--muted);
-        text-decoration: none;
-      }
-
-      footer a:hover {
-        color: var(--ink);
-      }
+      footer a { color: var(--muted); text-decoration: none; }
     </style>
   </head>
   <body>
@@ -233,99 +136,24 @@
         <div class="mark">Post Trade Labs</div>
         <div class="nav-meta">Trade review</div>
       </nav>
-
       <main>
         <h1>Post Trade Labs</h1>
         <p class="lede">
           Watch the trade back. Catch what broke before it becomes a habit —
           journal, 1‑minute replay, and an AI coach on the tape.
         </p>
-
-        <form class="access" id="access-form" novalidate>
-          <div class="access-row">
-            <input
-              id="email"
-              name="email"
-              type="email"
-              autocomplete="email"
-              required
-              placeholder="you@email.com"
-              aria-label="Email for early access"
-            />
-            <button class="btn btn-primary" type="submit" id="access-btn">
-              Get early access
-            </button>
-          </div>
-          <p class="access-note" id="access-note" aria-live="polite"></p>
-        </form>
-
         <div class="actions">
-          <a class="btn btn-ghost" href="https://rewind-coach-api.rewindapp.workers.dev/health"
-            >API status</a
-          >
+          <a class="btn btn-primary" href="/app/">Get early access</a>
+          <a class="btn btn-ghost" href="https://rewind-coach-api.rewindapp.workers.dev/health">API status</a>
         </div>
       </main>
-
       <footer>
         <span>© <span id="y"></span> Post Trade Labs</span>
-        <a href="mailto:hello@posttradelabs.com">hello@posttradelabs.com</a>
+        <a href="/app/">Open app</a>
       </footer>
     </div>
     <script>
       document.getElementById('y').textContent = String(new Date().getFullYear());
-
-      var form = document.getElementById('access-form');
-      var emailInput = document.getElementById('email');
-      var note = document.getElementById('access-note');
-      var btn = document.getElementById('access-btn');
-      var CONTACT = 'hello@posttradelabs.com';
-
-      form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        var email = (emailInput.value || '').trim();
-        note.className = 'access-note';
-
-        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-          note.className = 'access-note err';
-          note.textContent = 'Enter a valid email so we can reach you.';
-          emailInput.focus();
-          return;
-        }
-
-        try {
-          var list = JSON.parse(localStorage.getItem('ptl_waitlist') || '[]');
-          if (list.indexOf(email) === -1) {
-            list.push(email);
-            localStorage.setItem('ptl_waitlist', JSON.stringify(list));
-          }
-        } catch (err) {
-          // ignore storage failures
-        }
-
-        btn.disabled = true;
-        btn.textContent = 'Requesting…';
-        note.className = 'access-note ok';
-        note.textContent = 'Opening your mail app to finish the request…';
-
-        var subject = encodeURIComponent('Early access — Post Trade Labs');
-        var body = encodeURIComponent(
-          'Please add me to early access.\n\nEmail: ' + email + '\n',
-        );
-        window.location.href =
-          'mailto:' + CONTACT + '?subject=' + subject + '&body=' + body;
-
-        window.setTimeout(function () {
-          btn.disabled = false;
-          btn.textContent = 'Get early access';
-          note.className = 'access-note ok';
-          note.textContent =
-            'You’re on the list as ' +
-            email +
-            '. If nothing opened, email ' +
-            CONTACT +
-            '.';
-        }, 700);
-      });
     </script>
   </body>
 </html>
