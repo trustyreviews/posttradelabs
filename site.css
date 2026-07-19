@@ -434,6 +434,55 @@ a {
   border-radius: 32px;
 }
 
+/* Mobile only — shrink phone mocks so screenshots don’t fill the viewport.
+   Desktop (≥900px) keeps the sizes above unchanged. */
+@media (max-width: 899px) {
+  .phone-bezel {
+    border-radius: 28px;
+    padding: 8px;
+  }
+
+  .phone-island {
+    top: 14px;
+    width: 64px;
+    height: 18px;
+    border-radius: 14px;
+  }
+
+  .phone-screen {
+    border-radius: 22px;
+    height: 340px;
+    width: 170px;
+  }
+
+  .phone-hero .phone-screen {
+    height: 360px;
+    width: 180px;
+  }
+
+  .phone-sm .phone-screen {
+    height: 300px;
+    width: 150px;
+  }
+
+  .phone-md .phone-screen {
+    height: 340px;
+    width: 168px;
+  }
+
+  .screen-shot img {
+    border-radius: 22px;
+  }
+
+  .phone-row {
+    gap: 1.75rem;
+  }
+
+  .phone {
+    filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.55));
+  }
+}
+
 /* Legacy trial styles (unused in hero, kept harmless) */
 .screen-trial,
 .screen-home {
