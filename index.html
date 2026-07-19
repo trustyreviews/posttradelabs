@@ -113,12 +113,37 @@
         animation: rise 1s 0.12s ease-out both;
       }
 
-      .actions {
+      .access {
         margin-top: 2rem;
+        max-width: 26rem;
+        animation: rise 1s 0.22s ease-out both;
+      }
+
+      .access-row {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.75rem;
-        animation: rise 1s 0.22s ease-out both;
+        gap: 0.6rem;
+      }
+
+      .access input {
+        flex: 1 1 12rem;
+        min-width: 0;
+        padding: 0.9rem 1.1rem;
+        border-radius: 999px;
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--ink);
+        font: inherit;
+        font-size: 0.95rem;
+        outline: none;
+      }
+
+      .access input:focus {
+        border-color: rgba(200, 245, 66, 0.55);
+      }
+
+      .access input::placeholder {
+        color: var(--faint);
       }
 
       .btn {
@@ -127,14 +152,23 @@
         justify-content: center;
         padding: 0.9rem 1.35rem;
         border-radius: 999px;
+        border: none;
+        cursor: pointer;
         text-decoration: none;
+        font: inherit;
         font-weight: 600;
         font-size: 0.95rem;
-        transition: transform 0.15s ease, background 0.15s ease;
+        transition: transform 0.15s ease, background 0.15s ease, opacity 0.15s ease;
       }
 
       .btn:hover {
         transform: translateY(-1px);
+      }
+
+      .btn:disabled {
+        opacity: 0.7;
+        cursor: default;
+        transform: none;
       }
 
       .btn-primary {
@@ -146,6 +180,29 @@
         border: 1px solid var(--line);
         color: var(--ink);
         background: rgba(255, 255, 255, 0.03);
+      }
+
+      .access-note {
+        margin: 0.75rem 0 0;
+        color: var(--faint);
+        font-size: 0.85rem;
+        line-height: 1.45;
+        min-height: 1.3em;
+      }
+
+      .access-note.ok {
+        color: var(--accent);
+      }
+
+      .access-note.err {
+        color: #ff8f8f;
+      }
+
+      .actions {
+        margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
       }
 
       footer {
@@ -183,19 +240,92 @@
           Watch the trade back. Catch what broke before it becomes a habit —
           journal, 1‑minute replay, and an AI coach on the tape.
         </p>
+
+        <form class="access" id="access-form" novalidate>
+          <div class="access-row">
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              required
+              placeholder="you@email.com"
+              aria-label="Email for early access"
+            />
+            <button class="btn btn-primary" type="submit" id="access-btn">
+              Get early access
+            </button>
+          </div>
+          <p class="access-note" id="access-note" aria-live="polite"></p>
+        </form>
+
         <div class="actions">
-          <a class="btn btn-primary" href="mailto:hello@posttradelabs.com">Get early access</a>
-          <a class="btn btn-ghost" href="https://rewind-coach-api.rewindapp.workers.dev/health">API status</a>
+          <a class="btn btn-ghost" href="https://rewind-coach-api.rewindapp.workers.dev/health"
+            >API status</a
+          >
         </div>
       </main>
 
       <footer>
         <span>© <span id="y"></span> Post Trade Labs</span>
-        <a href="https://rewind-coach-api.rewindapp.workers.dev/health">api status</a>
+        <a href="mailto:hello@posttradelabs.com">hello@posttradelabs.com</a>
       </footer>
     </div>
     <script>
       document.getElementById('y').textContent = String(new Date().getFullYear());
+
+      var form = document.getElementById('access-form');
+      var emailInput = document.getElementById('email');
+      var note = document.getElementById('access-note');
+      var btn = document.getElementById('access-btn');
+      var CONTACT = 'hello@posttradelabs.com';
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var email = (emailInput.value || '').trim();
+        note.className = 'access-note';
+
+        if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          note.className = 'access-note err';
+          note.textContent = 'Enter a valid email so we can reach you.';
+          emailInput.focus();
+          return;
+        }
+
+        try {
+          var list = JSON.parse(localStorage.getItem('ptl_waitlist') || '[]');
+          if (list.indexOf(email) === -1) {
+            list.push(email);
+            localStorage.setItem('ptl_waitlist', JSON.stringify(list));
+          }
+        } catch (err) {
+          // ignore storage failures
+        }
+
+        btn.disabled = true;
+        btn.textContent = 'Requesting…';
+        note.className = 'access-note ok';
+        note.textContent = 'Opening your mail app to finish the request…';
+
+        var subject = encodeURIComponent('Early access — Post Trade Labs');
+        var body = encodeURIComponent(
+          'Please add me to early access.\n\nEmail: ' + email + '\n',
+        );
+        window.location.href =
+          'mailto:' + CONTACT + '?subject=' + subject + '&body=' + body;
+
+        window.setTimeout(function () {
+          btn.disabled = false;
+          btn.textContent = 'Get early access';
+          note.className = 'access-note ok';
+          note.textContent =
+            'You’re on the list as ' +
+            email +
+            '. If nothing opened, email ' +
+            CONTACT +
+            '.';
+        }, 700);
+      });
     </script>
   </body>
 </html>
