@@ -123,22 +123,42 @@ a {
   border-color: rgba(200, 245, 66, 0.35);
 }
 
-/* Hero */
+/* Hero — full-bleed candle chart */
 .hero {
+  position: relative;
+  isolation: isolate;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
-  align-items: center;
+  align-items: end;
   min-height: calc(100vh - 4.5rem);
   min-height: calc(100dvh - 4.5rem);
-  padding: clamp(2.5rem, 8vh, 5rem) clamp(1.25rem, 4vw, 2.75rem);
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
 }
 
-@media (min-width: 960px) {
-  .hero {
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 3rem;
-  }
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(5, 5, 5, 0.92) 0%, rgba(5, 5, 5, 0.62) 42%, rgba(5, 5, 5, 0.18) 72%, transparent 100%),
+    linear-gradient(0deg, rgba(5, 5, 5, 0.94) 0%, rgba(5, 5, 5, 0.35) 40%, transparent 65%),
+    radial-gradient(ellipse 70% 50% at 72% 38%, rgba(200, 245, 66, 0.08), transparent 55%);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  width: min(40rem, 100%);
+  padding: clamp(2.5rem, 8vh, 5rem) clamp(1.25rem, 4vw, 2.75rem) clamp(2.5rem, 8vh, 4.5rem);
 }
 
 .target {
@@ -232,61 +252,6 @@ a {
   background-repeat: no-repeat;
   opacity: 0.9;
 }
-
-.hero-viz {
-  position: relative;
-  min-height: 280px;
-  border: 1px solid var(--line);
-  background: linear-gradient(160deg, #0a0a0a, #070707);
-  padding: 1.25rem 1.25rem 1.5rem;
-}
-
-.node-label {
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--faint);
-  margin-bottom: 1.25rem;
-}
-
-.bars {
-  display: flex;
-  align-items: flex-end;
-  gap: 8px;
-  height: 220px;
-}
-
-.bars i {
-  flex: 1;
-  display: block;
-  height: var(--h);
-  background: rgba(244, 244, 240, 0.14);
-  border-radius: 2px 2px 0 0;
-  transform: scaleY(0.2);
-  transform-origin: bottom;
-  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s ease;
-}
-
-.bars.is-on i {
-  transform: scaleY(1);
-}
-
-.bars i.hot {
-  background: var(--lime);
-  box-shadow: 0 0 24px rgba(200, 245, 66, 0.35);
-}
-
-.bars i:nth-child(1) { transition-delay: 0.02s; }
-.bars i:nth-child(2) { transition-delay: 0.06s; }
-.bars i:nth-child(3) { transition-delay: 0.1s; }
-.bars i:nth-child(4) { transition-delay: 0.14s; }
-.bars i:nth-child(5) { transition-delay: 0.18s; }
-.bars i:nth-child(6) { transition-delay: 0.22s; }
-.bars i:nth-child(7) { transition-delay: 0.26s; }
-.bars i:nth-child(8) { transition-delay: 0.3s; }
-.bars i:nth-child(9) { transition-delay: 0.34s; }
-.bars i:nth-child(10) { transition-delay: 0.38s; }
 
 /* Detect band */
 .band {
@@ -633,7 +598,6 @@ a {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .status-dot { animation: none; }
-  .bars i,
   .detect-callout,
   .trades li,
   .prem-fill,
@@ -641,13 +605,11 @@ a {
   .btn {
     transition: none !important;
   }
-  .bars i,
   .detect-callout,
   .trades li {
     opacity: 1;
     transform: none;
   }
-  .bars i { transform: scaleY(1); }
   .prem-fill { width: 38%; }
   .prem-tick { left: 78%; opacity: 1; }
 }

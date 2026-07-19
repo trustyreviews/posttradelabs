@@ -40,7 +40,9 @@
       </div>
     </header>
 
-    <section class="hero">
+    <section class="hero" aria-label="Product demo">
+      <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
+      <div class="hero-vignette" aria-hidden="true"></div>
       <div class="hero-copy">
         <p class="target">[ Target: precision execution ]</p>
         <h1>Watch the <span class="lime">tape edge.</span></h1>
@@ -54,21 +56,6 @@
             <span class="wave" aria-hidden="true"></span>
             API status
           </a>
-        </div>
-      </div>
-      <div class="hero-viz" aria-hidden="true">
-        <div class="node-label">Data node 001-PTL</div>
-        <div class="bars" id="hero-bars">
-          <i style="--h:28%"></i>
-          <i style="--h:42%"></i>
-          <i style="--h:36%"></i>
-          <i style="--h:58%"></i>
-          <i style="--h:48%"></i>
-          <i class="hot" style="--h:86%"></i>
-          <i style="--h:64%"></i>
-          <i style="--h:52%"></i>
-          <i style="--h:40%"></i>
-          <i style="--h:34%"></i>
         </div>
       </div>
     </section>
