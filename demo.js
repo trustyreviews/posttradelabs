@@ -524,6 +524,37 @@
       reveals.forEach((el) => revealIO.observe(el));
     }
 
+    // Hero phone: floating bob + 3D tilt that follows the cursor
+    const phone = document.getElementById('hero-phone');
+    if (phone && !reduceMotion) {
+      const base = { y: -14, x: 8, z: -4 };
+      let pointer = { x: 0, y: 0 };
+      let current = { y: base.y, x: base.x };
+      const t0 = performance.now();
+
+      window.addEventListener(
+        'pointermove',
+        (e) => {
+          pointer.x = (e.clientX / window.innerWidth) * 2 - 1;
+          pointer.y = (e.clientY / window.innerHeight) * 2 - 1;
+        },
+        { passive: true },
+      );
+
+      (function tick(now) {
+        const t = (now - t0) / 1000;
+        const swayY = Math.sin(t * 0.85) * 4.5 + Math.sin(t * 1.4) * 1.8;
+        const swayX = Math.cos(t * 0.65) * 3.2;
+        const targetY = base.y + swayY + pointer.x * 18;
+        const targetX = base.x + swayX + -pointer.y * 12;
+        current.y += (targetY - current.y) * 0.07;
+        current.x += (targetX - current.x) * 0.07;
+        phone.style.transform =
+          `rotateY(${current.y.toFixed(2)}deg) rotateX(${current.x.toFixed(2)}deg) rotateZ(${base.z}deg)`;
+        requestAnimationFrame(tick);
+      })(performance.now());
+    }
+
     if (document.fonts?.ready) document.fonts.ready.then(resizeAll);
   }
 

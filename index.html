@@ -22,7 +22,7 @@
       rel="stylesheet"
     />
     <meta http-equiv="Cache-Control" content="no-cache" />
-    <link rel="stylesheet" href="site.css?v=copy-5" />
+    <link rel="stylesheet" href="site.css?v=phone-float-6" />
   </head>
   <body>
     <div class="grid-bg" aria-hidden="true"></div>
@@ -58,32 +58,42 @@
           </div>
         </div>
 
-        <div class="hero-phone-wrap" aria-hidden="true">
-          <div class="phone phone-hero phone-tilt-a">
-            <div class="phone-bezel">
-              <div class="phone-island"></div>
-              <div class="phone-screen screen-replay">
-                <div class="ui-top">
-                  <span>NVDA</span>
-                  <span class="ui-pill">LIVE</span>
-                </div>
-                <div class="ui-chart">
-                  <i style="--h:32%"></i><i style="--h:44%"></i><i style="--h:38%"></i>
-                  <i class="up" style="--h:55%"></i><i class="up" style="--h:68%"></i>
-                  <i class="up" style="--h:62%"></i><i class="dn" style="--h:48%"></i>
-                  <i class="up" style="--h:72%"></i><i class="dn" style="--h:58%"></i>
-                  <i class="up" style="--h:80%"></i>
-                </div>
-                <div class="ui-levels">
-                  <span class="lvl entry">Entry</span>
-                  <span class="lvl stop">Stop</span>
-                </div>
-                <div class="ui-scrub">
-                  <div class="ui-scrub-fill"></div>
-                  <div class="ui-scrub-thumb"></div>
-                </div>
-                <div class="ui-transport">
-                  <span>◀◀</span><span class="play">▶</span><span>▶▶</span>
+        <div class="hero-phone-wrap" id="hero-phone-wrap" aria-hidden="true">
+          <div class="phone-stage">
+            <div class="phone-float">
+              <div class="phone phone-hero" id="hero-phone">
+                <div class="phone-bezel">
+                  <div class="phone-island"></div>
+                  <div class="phone-screen screen-app">
+                    <div class="app-status">
+                      <span>9:41</span>
+                      <span class="app-status-right">●●● 5G</span>
+                    </div>
+                    <div class="app-brand-row">
+                      <span class="app-mark"></span>
+                      <span>Post Trade Labs</span>
+                    </div>
+                    <p class="app-kicker">Chart replay</p>
+                    <h3 class="app-title">Watch the<br /><span>trade back.</span></h3>
+                    <div class="app-chart-card">
+                      <div class="ui-top">
+                        <span>NVDA</span>
+                        <span class="ui-pill mint">REPLAY</span>
+                      </div>
+                      <div class="ui-chart compact">
+                        <i style="--h:32%"></i><i style="--h:44%"></i><i class="up" style="--h:55%"></i>
+                        <i class="up" style="--h:68%"></i><i class="dn" style="--h:48%"></i>
+                        <i class="up" style="--h:72%"></i><i class="up" style="--h:80%"></i>
+                        <i class="dn" style="--h:58%"></i>
+                      </div>
+                      <div class="ui-scrub">
+                        <div class="ui-scrub-fill"></div>
+                        <div class="ui-scrub-thumb"></div>
+                      </div>
+                    </div>
+                    <div class="app-cta">Resume tape</div>
+                    <div class="app-home-ind"></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -248,7 +258,7 @@
       <a href="/app/">Open app ↗</a>
     </footer>
 
-    <script src="demo.js?v=copy-5" defer></script>
+    <script src="demo.js?v=phone-float-6" defer></script>
     <script>
       document.getElementById('y').textContent = String(new Date().getFullYear());
     </script>
