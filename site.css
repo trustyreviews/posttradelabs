@@ -1394,6 +1394,13 @@ a {
 
 .foot a:hover { color: var(--mint-bright); }
 
+.foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.1rem;
+  align-items: center;
+}
+
 @media (max-width: 720px) {
   .status { display: none; }
 }
