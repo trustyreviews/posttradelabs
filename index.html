@@ -3,211 +3,92 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Post Trade Labs — Watch the trade back</title>
+    <title>Post Trade Labs</title>
     <meta
       name="description"
-      content="Replay your trade on the chart. A coach freezes the moment your process slipped."
+      content="Watch your trade back on the tape. Freeze the moment your process slipped."
     />
     <meta property="og:title" content="Post Trade Labs" />
     <meta
       property="og:description"
-      content="Watch the trade back. Catch what broke before it becomes a habit."
+      content="Watch your trade back on the tape. Freeze the moment your process slipped."
     />
     <meta property="og:url" content="https://www.posttradelabs.com/" />
     <link rel="canonical" href="https://www.posttradelabs.com/" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Syne:wght@600;700;800&display=swap"
       rel="stylesheet"
     />
     <meta http-equiv="Cache-Control" content="no-cache" />
-    <link rel="stylesheet" href="site.css?v=tsla-demo-14" />
+    <link rel="stylesheet" href="site.css?v=clean-1" />
   </head>
   <body>
-    <div class="grid-bg" aria-hidden="true"></div>
-
     <header class="nav">
-      <a class="logo" href="/">
-        <span class="logo-sq" aria-hidden="true"></span>
-        Post Trade Labs
-      </a>
-      <div class="nav-right">
-        <span class="status">
-          <span class="status-dot" aria-hidden="true"></span>
-          Trade server active
-        </span>
-        <a class="nav-link" href="/app/">Open app</a>
-      </div>
+      <a class="logo" href="/">Post Trade Labs</a>
+      <a class="nav-cta" href="/app/">Open app</a>
     </header>
 
-    <section class="hero" aria-label="Product demo">
-      <canvas id="hero-canvas" class="hero-canvas" aria-hidden="true"></canvas>
-      <div class="hero-vignette" aria-hidden="true"></div>
-      <div class="hero-inner">
+    <main>
+      <section class="hero">
+        <div class="hero-media" aria-hidden="true">
+          <img src="img/app-replay.png" alt="" class="hero-shot" />
+          <div class="hero-shade"></div>
+          <div class="hero-glow"></div>
+        </div>
+
         <div class="hero-copy">
-          <p class="target">[ Chart replay + coach ]</p>
-          <h1>Watch the <span class="mint">trade back.</span></h1>
+          <p class="brand">Post Trade Labs</p>
+          <h1>Watch the trade back.</h1>
           <p class="lede">
-            Scrub the trade back on the chart. The coach freezes the exact bar
-            where your process slipped.
-          </p>
-          <p class="demo-chip" aria-label="Sample demo trade">
-            <span class="demo-chip-tag">Demo</span>
-            <span class="demo-chip-sym">TSLA</span>
-            <span class="demo-chip-meta">Long · 10sh · +$34.50</span>
+            Replay the tape. Freeze the bar where your process slipped — before
+            it becomes a habit.
           </p>
           <div class="actions">
-            <a class="btn btn-mint" href="/app/">Open app →</a>
-            <a class="btn btn-ghost" href="#phones">See the app</a>
+            <a class="btn-primary" href="/app/">Open app</a>
+            <a class="btn-text" href="#product">See how it works</a>
           </div>
         </div>
+      </section>
 
-        <div class="hero-phone-wrap" id="hero-phone-wrap" aria-hidden="true">
-          <div class="phone-stage">
-            <div class="phone-float">
-              <div class="phone phone-hero" id="hero-phone">
-                <div class="phone-bezel">
-                  <div class="phone-island"></div>
-                  <div class="phone-screen screen-shot">
-                    <img src="img/app-home.png" alt="Post Trade Labs home — Log a trade and resume tape" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <section class="product" id="product">
+        <div class="product-intro">
+          <h2>Log. Replay. Learn.</h2>
+          <p>Three screens. One job — review the trade with honesty.</p>
         </div>
-      </div>
-    </section>
-
-    <section class="phones" id="phones">
-      <div class="phones-head reveal" data-reveal>
-        <p class="eyebrow">Inside the app</p>
-        <h2>Home → replay → debrief.</h2>
-        <p class="phones-lede">
-          Real screens from the app — log, scrub the tape, then AI coach takeaways.
-        </p>
-      </div>
-      <div class="phone-row">
-        <figure class="phone-card reveal reveal-phone" data-reveal data-delay="0">
-          <div class="phone phone-sm">
-            <div class="phone-bezel">
-              <div class="phone-island"></div>
-              <div class="phone-screen screen-shot">
-                <img src="img/app-home.png" alt="Post Trade Labs home" />
-              </div>
-            </div>
-          </div>
-          <figcaption>Home</figcaption>
-        </figure>
-
-        <figure class="phone-card phone-card-mid reveal reveal-phone" data-reveal data-delay="120">
-          <div class="phone phone-md">
-            <div class="phone-bezel">
-              <div class="phone-island"></div>
-              <div class="phone-screen screen-shot">
-                <img src="img/app-replay.png" alt="Post Trade Labs — chart replay with entry and exit" />
-              </div>
-            </div>
-          </div>
-          <figcaption>Replay</figcaption>
-        </figure>
-
-        <figure class="phone-card reveal reveal-phone" data-reveal data-delay="240">
-          <div class="phone phone-sm">
-            <div class="phone-bezel">
-              <div class="phone-island"></div>
-              <div class="phone-screen screen-shot">
-                <img src="img/app-summary.png" alt="Post Trade Labs — Trade Summary with AI coach" />
-              </div>
-            </div>
-          </div>
-          <figcaption>Trade summary</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="band" id="detect">
-      <div class="band-viz reveal reveal-left" data-reveal>
-        <div class="tape-panel">
-          <canvas id="tape-canvas" width="640" height="280" aria-hidden="true"></canvas>
-          <div class="detect-callout" id="detect-callout">
-            <span class="detect-kicker">On the tape</span>
-            <strong>Process break</strong>
-            <span class="detect-drop">Stop moved · bar 52</span>
-          </div>
+        <div class="product-strip">
+          <figure>
+            <img src="img/app-home.png" alt="Home — log a trade and open replay" />
+            <figcaption>Home</figcaption>
+          </figure>
+          <figure>
+            <img src="img/app-replay.png" alt="Chart replay with entry and exit" />
+            <figcaption>Replay</figcaption>
+          </figure>
+          <figure>
+            <img src="img/app-summary.png" alt="Trade summary with coach takeaways" />
+            <figcaption>Summary</figcaption>
+          </figure>
         </div>
-      </div>
-      <div class="band-copy reveal reveal-right" data-reveal data-delay="100">
-        <h2>Freeze the <span class="fatal">exact bar.</span></h2>
-        <p>
-          Playback stops on the candle where the habit showed up. Coach names the
-          process break while the tape is still under your thumb.
-        </p>
-        <ul class="checks">
-          <li><span class="ok">✓</span> Scrub the trade bar by bar</li>
-          <li><span class="ok">✓</span> Entry / stop / exit on the rail</li>
-          <li><span class="ok">✓</span> Coach freeze-frames mid-replay</li>
-        </ul>
-      </div>
-    </section>
+      </section>
 
-    <section class="engine" id="engine">
-      <div class="engine-head reveal" data-reveal>
-        <p class="eyebrow">After the tape</p>
-        <h2>Leave with the lesson — not just the P&amp;L.</h2>
-      </div>
-      <div class="metrics">
-        <article class="card card-wide reveal" data-reveal data-delay="0">
-          <p class="card-label">Premature exits</p>
-          <div class="prem-bar">
-            <span class="prem-fill" id="prem-fill"></span>
-            <span class="prem-tick" id="prem-tick"></span>
-          </div>
-          <p class="card-note">Process breaks clustered after +1.5R runners</p>
-        </article>
-        <article class="card reveal" data-reveal data-delay="80">
-          <p class="card-label">Win rate</p>
-          <p class="metric-big mint" id="win-rate">47.2%</p>
-          <p class="metric-delta up">+1.4% vs prev</p>
-        </article>
-        <article class="card reveal" data-reveal data-delay="160">
-          <p class="card-label">Max drawdown</p>
-          <p class="metric-big red" id="max-dd">−8.1%</p>
-          <p class="metric-delta">Drawdown limit</p>
-        </article>
-        <article class="card card-full reveal" data-reveal data-delay="220">
-          <p class="card-label">Logged trades</p>
-          <ul class="trades">
-            <li>
-              <span>TSLA Long @ 248.40</span>
-              <span class="tag tag-good">DEMO</span>
-            </li>
-            <li>
-              <span>NVDA Short @ 128.40</span>
-              <span class="tag tag-bad">SOLD_TOO_SOON</span>
-            </li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="close reveal" data-reveal>
-      <h2>Stop guessing. Start reviewing.</h2>
-      <a class="btn btn-mint" href="/app/">Open app →</a>
-    </section>
+      <section class="close">
+        <h2>Stop guessing.</h2>
+        <a class="btn-primary" href="/app/">Open app</a>
+      </section>
+    </main>
 
     <footer class="foot">
-      <span>> Post Trade Labs · © <span id="y"></span></span>
-      <span class="foot-links">
+      <span>© <span id="y"></span> Post Trade Labs</span>
+      <nav class="foot-links">
         <a href="/privacy.html">Privacy</a>
         <a href="/terms.html">Terms</a>
         <a href="/support.html">Support</a>
-        <a href="/app/">Open app ↗</a>
-      </span>
+        <a href="/app/">App</a>
+      </nav>
     </footer>
 
-    <script src="demo.js?v=tsla-demo-14" defer></script>
     <script>
       document.getElementById('y').textContent = String(new Date().getFullYear());
     </script>
