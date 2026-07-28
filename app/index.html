@@ -6,7 +6,7 @@
         <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
-    <!-- build: 202607280103 -->
+    <!-- build: 202607280106 -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Post Trade Labs</title>
     <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
@@ -36,6 +36,26 @@
     </noscript>
     <!-- The root element for your Expo app. -->
     <div id="root"></div>
-  <script src="/app/_expo/static/js/web/AppEntry-58106e4c6921a13a7a2191a5f804929f.js?b=202607280103" defer></script>
+  <script src="/app/_expo/static/js/web/AppEntry-9e6573611f2069ff3320547e085f0aa7.js?b=202607280106" defer></script>
+
+    <script>
+      (function () {
+        var build = '202607280106';
+        try {
+          if (localStorage.getItem('ptl_web_build') === build) return;
+          localStorage.setItem('ptl_web_build', build);
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function (regs) {
+              regs.forEach(function (r) { r.unregister(); });
+            });
+          }
+          if ('caches' in window) {
+            caches.keys().then(function (keys) {
+              keys.forEach(function (k) { caches.delete(k); });
+            });
+          }
+        } catch (e) {}
+      })();
+    </script>
 </body>
 </html>
