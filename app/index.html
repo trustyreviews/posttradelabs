@@ -42,7 +42,8 @@
       (function () {
         var build = '202607291606';
         try {
-          if (localStorage.getItem('ptl_web_build') === build) return;
+          var prev = localStorage.getItem('ptl_web_build');
+          if (prev === build) return;
           localStorage.setItem('ptl_web_build', build);
           if ('serviceWorker' in navigator) {
             navigator.serviceWorker.getRegistrations().then(function (regs) {
@@ -54,6 +55,7 @@
               keys.forEach(function (k) { caches.delete(k); });
             });
           }
+          if (prev) location.reload();
         } catch (e) {}
       })();
     </script>
